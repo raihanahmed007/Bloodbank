@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BloodBank_Management_System.Models.BBMSystem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodInventoryManager.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodRecipient.RecipientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodSample.BloodSampleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.District.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Donor.DonorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BBMSName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodInventoryManager.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodRecipient.RecipientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodSample.BloodSampleId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.District.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Donor.DonorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BBMSName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BBMSystemId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BBMSystemId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BBMSystemId })
+        </td>
+    </tr>
+}
+
+</table>

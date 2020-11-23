@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -Blood Bank Management System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("css", false)
+    @*<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>*@
+ 
+    <style>
+        body {
+            background-color: pink;
+            -webkit-animation: random 50s infinite;
+            animation: random 25s infinite;
+            font: 13px Sans-Serif;
+        }
+
+        @@-webkit-keyframes random {
+
+            to {
+                background-color: blue;
+            }
+        }
+
+        @@keyframes random {
+            to {
+                background-color: #08f890;
+            }
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("BloodBank", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Donor-Registration", "Index", "Donors")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Blood Inventory<span class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li class="dropdown-item">@Html.ActionLink("District", "Index", "Districts")</li>
+                            <li class="dropdown-item">@Html.ActionLink("Blood-Groups", "Index", "BloodSamples")</li>
+                            <li class="dropdown-item">@Html.ActionLink("Blood-Recipint", "Index", "BloodRecipients")</li>
+
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                </ul>
+
+                @Html.Partial("_LoginPartial")
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <div>
+        <nav class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand"></a>
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+    </div>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $('.navbar .dropdown').hover(function () {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
+            }, function () {
+                $(this).find('.dropdown-menu').first().stop(true, true).slideUp(105)
+            });
+        });
+    </script>
+
+</body>
+</html>

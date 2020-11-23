@@ -1,0 +1,82 @@
+﻿@model BloodBank_Management_System.Models.Donor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Donor</h4>
+    <hr />
+    <dl class="dl-horizontal" style="background: linear-gradient(to right, #f7c193,#89f5d0)">
+        <dt>
+            @Html.DisplayNameFor(model => model.District.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuentityOfBlood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuentityOfBlood)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DonorId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,42 @@
+﻿@model BloodBank_Management_System.Models.BloodSample
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BloodSample</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Donor.DonorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donor.DonorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodGroups)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodGroups)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodQuentity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodQuentity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BloodSampleId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,72 @@
+﻿@model BloodBank_Management_System.Models.BBMSystem
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BBMSystem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodInventoryManager.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodInventoryManager.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodRecipient.RecipientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodRecipient.RecipientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodSample.BloodSampleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodSample.BloodSampleId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.District.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Donor.DonorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donor.DonorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BBMSName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BBMSName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

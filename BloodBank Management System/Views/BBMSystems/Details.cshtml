@@ -1,0 +1,66 @@
+﻿@model BloodBank_Management_System.Models.BBMSystem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BBMSystem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodInventoryManager.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodInventoryManager.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodRecipient.RecipientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodRecipient.RecipientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodSample.BloodSampleId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodSample.BloodSampleId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.District.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.District.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Donor.DonorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Donor.DonorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BBMSName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BBMSName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BBMSystemId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
